@@ -165,12 +165,24 @@
   }
 
   button {
+    $first-color: hsl(250, 24%, 62%);
+    $second-color: hsl(238, 64%, 80%);
+
     border: none;
     outline: none;
     margin-inline: auto;
     min-width: func.rem(202);
     color: inherit;
     cursor: pointer;
+
+    &:disabled {
+      cursor: not-allowed;
+      background-image: linear-gradient(
+        to bottom,
+        rgba($first-color, 0.1),
+        rgba($second-color, 0.1)
+      );
+    }
   }
 }
 

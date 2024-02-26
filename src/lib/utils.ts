@@ -13,6 +13,7 @@ export function createGrid({ length = 0, path, parentElement }: GridProps) {
       }
 
       image.alt = path ? `Project image ${index + 1}` : "About image";
+      image.setAttribute("loading", "lazy");
 
       parentElement?.appendChild(image);
     });

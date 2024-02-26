@@ -44,6 +44,7 @@ p {
 input,
 textarea {
   border: none;
+  border-radius: 0;
   outline: 1px solid v.$color-secondary;
   font-size: func.rem(16);
   font-family: v.$font-montserrat;

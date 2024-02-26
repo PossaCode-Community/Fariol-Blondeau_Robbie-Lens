@@ -55,7 +55,7 @@ gsap.utils.toArray<HTMLDivElement[]>("div").forEach((div) => {
     },
     {
       opacity: 1,
-      duration: 1.5,
+      duration: 2.2,
       scrollTrigger: div,
     }
   );
