@@ -3,7 +3,7 @@ import "./animation";
 import { createIcons, Instagram, Twitter } from "lucide";
 import { createGrid, wait } from "../lib/utils";
 import tarifs from "../data/tarifs.json";
-import { FormDataProps } from "../types";
+import type { FormDataProps } from "../types";
 
 createIcons({
   icons: { Instagram, Twitter },
