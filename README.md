@@ -1,6 +1,7 @@
 ![Robbie Lens Screenshot](public/screely-1708804243088.png)
 
-Robbie Lens est un prjet de la communauté PossaCode
+Robbie Lens est un projet de la communauté PossaCode pour la formation des membres.
+Cet projet utilise GoogleSheet comme database pour enregistrer les entrées des utilisateurs dans la plateforme.
 
 ### Stack
 
@@ -10,6 +11,7 @@ Robbie Lens est un prjet de la communauté PossaCode
 - Gsap
 - Lucide Icons
 - Google Sheet
+
 
 ### Deploy
 
