@@ -1,0 +1,42 @@
+@use "../utils/fonction" as func;
+@use "../varibles" as v;
+
+header {
+  padding-block: func.rem(18);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: func.rem(20);
+
+  @media (width < func.em(768)) {
+    flex-direction: column;
+    row-gap: func.rem(47);
+    align-items: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+
+    column-gap: func.rem(100);
+    list-style: none;
+
+    @media (width < func.em(768)) {
+      flex-direction: column;
+      row-gap: func.rem(20);
+    }
+  }
+
+  &__item {
+    color: hsl(0, 0%, 14%);
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: v.$color-secondary;
+    }
+  }
+}

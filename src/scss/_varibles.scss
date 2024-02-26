@@ -1,0 +1,25 @@
+@use "utils/fonction" as func;
+
+$font-manrope: "Manrope", sans-serif;
+$font-montserrat: "Montserrat", sans-serif;
+
+$color-primary: hsl(238, 30%, 17%);
+$color-secondary: hsl(230, 94%, 82%);
+
+$heading-1: clamp(
+  func.rem(27),
+  1.1794354838709677rem + 2.5089605734767026vw,
+  func.rem(55)
+);
+
+$heading-2: clamp(
+  func.rem(25),
+  1.3810483870967742rem + 0.8960573476702508vw,
+  func.rem(35)
+);
+
+$paragraph: clamp(
+  func.rem(14),
+  0.9274193548387096rem + 0.35842293906810035vw,
+  func.rem(18)
+);

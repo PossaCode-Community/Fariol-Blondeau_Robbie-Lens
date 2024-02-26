@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robbie Lens</title>
+  </head>
+  <body>
+    <header class="wrapper">
+      <nav class="nav">
+        <a href="/">
+          <img
+            src="./logo.png"
+            alt="Logo Robbie Lens"
+            width="{82}"
+            height="{44}" />
+        </a>
+
+        <ul class="nav__list">
+          <li class="nav__item"><a href="/">Acceuil</a></li>
+          <li class="nav__item">
+            <a href="nested/about.html">À propos</a>
+          </li>
+          <li class="nav__item">
+            <a href="nested/tarifs.html">Tarifs</a>
+          </li>
+          <li class="nav__item">
+            <a href="nested/portfolio.html">Portfolio</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section__hero">
+        <div class="hero container">
+          <div class="hero__right">
+            <img
+              class="hero__image"
+              src="./hero-img.png"
+              alt="Picture of a woman"
+              width="{419}"
+              height="{425}" />
+          </div>
+
+          <div class="hero__info">
+            <h1>
+              Robbie Lens <br />
+              Photographie
+            </h1>
+            <p>
+              Où professionalisme s’allie avec passion. Depuis plus de 5 ans
+              maintenant, j’exerce mon métier avec la passion qui m’anime :
+              capturer l’essence de chaque instant.
+            </p>
+
+            <a href="#contact" class="custom-btn">UN PROJET ? ÉCRIVEZ-MOI</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section__projects">
+        <div class="container">
+          <h2>Mon dernier projet</h2>
+          <div data-grid="project" class="projects__grid"></div>
+
+          <a href="nested/portfolio.html" class="custom-btn"
+            >VOIR MON PORTFOLIO</a
+          >
+        </div>
+      </section>
+
+      <section id="contact" class="section__contact">
+        <div class="container">
+          <h2>Parlons de votre projet</h2>
+
+          <form class="form">
+            <div class="form__inputs">
+              <div class="input__group">
+                <label for="name">Nom</label>
+                <input name="name" type="text" id="name" required />
+              </div>
+
+              <div class="input__group">
+                <label for="email">Email</label>
+                <input name="email" type="email" id="email" required />
+              </div>
+            </div>
+
+            <div class="form_message">
+              <label for="message">Message</label>
+              <textarea name="message" id="message" required></textarea>
+            </div>
+            <button class="custom-btn">Envoyez</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="wrapper">
+      <div>
+        <a href="/">
+          <img
+            src="./logo.png"
+            alt="Logo Robbie Lens"
+            width="{54}"
+            height="{30}" />
+        </a>
+
+        <ul>
+          <li>
+            <a href="instagram.com">
+              <i data-lucide="instagram"></i>
+            </a>
+          </li>
+          <li>
+            <a href="twtter.com">
+              <i data-lucide="twitter"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script type="module" src="/src/script/main.ts"></script>
+  </body>
+</html>

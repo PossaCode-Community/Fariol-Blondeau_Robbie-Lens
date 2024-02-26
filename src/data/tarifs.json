@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Shooting photo",
+    "description": "Pour capturer vos moments les plus précieux et garder un souvenir impérissable. Je me déplace en Île-de-France pour réaliser vos photos",
+    "price": "350€e/demi journée",
+    "includes": "Matériel, déplacement inclus"
+  },
+  {
+    "title": "Retouches",
+    "description": "Vous souhaitez retoucher vos photos pour un résultat professionnel ? Bénéficier d’un rendu optimal pour vos publications",
+    "price": "550e/demi journée",
+    "includes": "2 allez/retours par photo"
+  },
+  {
+    "title": "Album photos",
+    "description": "Partagez avec vos proches et vos clients les photos des moments partagés ensemble à travers un album photo personnalisé",
+    "price": "400e album A4",
+    "includes": "30 pages recto/verso"
+  }
+]

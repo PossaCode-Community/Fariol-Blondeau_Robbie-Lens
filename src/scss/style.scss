@@ -1,0 +1,402 @@
+@use "varibles" as v;
+@use "global";
+@use "utils/fonction" as func;
+@use "components";
+
+.section__hero {
+  background-color: v.$color-primary;
+
+  .hero {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: func.rem(32);
+
+    @media (width < func.em(768)) {
+      flex-direction: column;
+    }
+
+    &__right {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: func.rem(-10);
+        right: func.rem(-10);
+        height: func.rem(100);
+        width: func.rem(100);
+
+        // TODO: To refactor
+
+        border-right: func.rem(2) solid v.$color-secondary;
+        border-bottom: func.rem(2) solid v.$color-secondary;
+      }
+    }
+
+    &__image {
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+      opacity: 0;
+
+      @media (width < func.em(768)) {
+        width: 100%;
+      }
+    }
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+      row-gap: func.rem(46);
+
+      @media (width < func.em(768)) {
+        row-gap: func.rem(18);
+      }
+
+      h1 {
+        font-size: v.$heading-1;
+        color: v.$color-secondary;
+        font-weight: 400;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        opacity: 1;
+      }
+
+      p {
+        color: inherit;
+        max-width: func.rem(404);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        opacity: 1;
+
+        @media (width < func.em(768)) {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.section__projects {
+  h2 {
+    color: v.$color-primary;
+    text-align: center;
+    margin-block-end: func.rem(65);
+
+    @media (width < func.em(425)) {
+      margin-block-end: func.rem(37);
+    }
+  }
+
+  .projects__grid {
+    display: grid;
+    gap: func.rem(22);
+    grid-template-columns: repeat(auto-fit, minmax(func.rem(250), 1fr));
+    justify-content: center;
+    margin-block-end: func.rem(66);
+    @media (width < func.em(425)) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    img {
+      width: 100%;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease-in-out;
+
+      &:hover {
+        filter: grayscale(0);
+      }
+    }
+  }
+
+  .custom-btn {
+    display: block;
+    margin-inline: auto;
+  }
+}
+
+.section__contact {
+  background-color: v.$color-primary;
+
+  h2 {
+    text-align: center;
+    color: v.$color-secondary;
+    margin-block-end: func.rem(52);
+  }
+
+  form {
+    max-width: func.rem(525);
+    margin-inline: auto;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: func.rem(20);
+  }
+
+  .form__inputs {
+    display: flex;
+    gap: func.rem(20);
+    align-items: center;
+
+    @media (width < func.em(487)) {
+      flex-direction: column;
+    }
+  }
+
+  .input__group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: func.rem(10);
+
+    input {
+      padding: func.rem(10);
+    }
+  }
+
+  .form_message {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: func.rem(10);
+
+    textarea {
+      min-height: func.rem(207);
+      padding: func.rem(10);
+      resize: none;
+    }
+  }
+
+  button {
+    border: none;
+    outline: none;
+    margin-inline: auto;
+    min-width: func.rem(202);
+    color: inherit;
+    cursor: pointer;
+  }
+}
+
+.about__section {
+  background-color: v.$color-primary;
+
+  .about__grid {
+    position: relative;
+    display: grid;
+    gap: func.rem(10);
+    grid-template-columns: repeat(auto-fit, minmax(func.rem(180), 1fr));
+    justify-content: center;
+
+    z-index: 100;
+
+    @media (width < func.em(425)) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    img {
+      width: 100%;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 50%;
+      height: 100%;
+      right: func.rem(-30);
+      bottom: func.rem(-30);
+      z-index: -1;
+
+      background-color: hsl(237, 30%, 25%);
+
+      @media (width < func.rem(768)) {
+        display: none;
+      }
+    }
+  }
+
+  .custom-btn {
+    display: block;
+    margin-inline: auto;
+  }
+}
+
+.about__title {
+  font-size: v.$heading-1;
+  color: v.$color-secondary;
+  margin-block: func.rem(100);
+
+  @media (width < func.rem(768)) {
+    margin-block: func.rem(50);
+  }
+}
+
+.about__text {
+  display: block;
+  max-width: func.rem(668);
+  margin-inline: auto;
+  padding: func.rem(60);
+  position: relative;
+  z-index: 100;
+  margin-block: func.rem(100);
+
+  @media (width < func.rem(768)) {
+    max-width: 100%;
+    padding: func.rem(0);
+    margin-block: func.rem(50);
+  }
+
+  .about__services {
+    margin-block-start: func.rem(30);
+    margin-block-end: func.rem(10);
+  }
+
+  ul {
+    margin-inline-start: func.rem(18);
+    display: flex;
+    flex-direction: column;
+    row-gap: func.rem(5);
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 50%;
+    height: 100%;
+    right: func.rem(-30);
+    bottom: func.rem(-30);
+    z-index: -1;
+
+    border-right: func.rem(1) solid v.$color-secondary;
+    border-bottom: func.rem(1) solid v.$color-secondary;
+
+    @media (width < func.rem(768)) {
+      display: none;
+    }
+  }
+}
+
+.tarifs__section {
+  background-color: v.$color-primary;
+}
+
+.tarif__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h2 {
+    font-size: v.$heading-1;
+    color: v.$color-secondary;
+  }
+
+  a {
+    padding-inline: func.rem(20);
+
+    @media (width < func.rem(768)) {
+      display: none;
+    }
+  }
+}
+
+.tarifs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(func.rem(278), 1fr));
+  gap: func.rem(30);
+  margin-block: func.rem(93);
+
+  .tarif__card {
+    display: flex;
+    flex-direction: column;
+    row-gap: func.rem(21);
+    padding: 0 func.rem(38) func.rem(38) 0;
+
+    border-right: func.rem(1) solid v.$color-secondary;
+    border-bottom: func.rem(1) solid v.$color-secondary;
+
+    .tarif__title {
+      font-weight: 400;
+      font-size: func.rem(20);
+      color: v.$color-secondary;
+    }
+
+    .tarif__description {
+      font-size: func.rem(14);
+    }
+
+    .tarif__price {
+      color: v.$color-secondary;
+    }
+
+    .tarif__includes {
+      font-size: func.rem(10);
+    }
+  }
+}
+
+.tarif__table {
+  h2 {
+    font-size: v.$heading-2;
+    color: v.$color-secondary;
+    margin-block-end: func.rem(37);
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  flex-shrink: 0;
+  overflow-x: scroll;
+
+  thead th {
+    text-align: center;
+    padding-block: func.rem(9);
+    font-weight: 400;
+  }
+
+  th,
+  td {
+    border: 1px solid v.$color-secondary;
+    text-align: left;
+    width: calc(100% / 3);
+  }
+
+  tbody td {
+    padding-block: func.rem(45);
+    font-size: func.rem(14);
+    font-weight: 400;
+    text-align: center;
+  }
+}
+
+.portfolio__title {
+  background-color: v.$color-primary;
+  padding-block: func.rem(72);
+
+  h1 {
+    font-size: v.$heading-1;
+    color: v.$color-secondary;
+    font-weight: 400;
+  }
+}
+
+.portfolio {
+  h2 {
+    font-size: v.$heading-2;
+    color: hsl(0, 0%, 0%);
+    margin-block-end: func.rem(53);
+  }
+
+  .portfolio__grid {
+    display: grid;
+    gap: func.rem(22);
+    grid-template-columns: repeat(auto-fit, minmax(func.rem(250), 1fr));
+    justify-content: center;
+    margin-block-end: func.rem(66);
+
+    @media (width < func.em(425)) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}

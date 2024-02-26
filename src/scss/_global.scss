@@ -1,0 +1,71 @@
+@use "varibles" as v;
+@use "utils/fonction" as func;
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: v.$font-montserrat;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 400;
+  scroll-behavior: smooth;
+
+  background-color: hsl(249, 100%, 99%);
+  color: hsl(249, 100%, 99%);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+section {
+  padding-block: func.rem(72);
+}
+
+h2 {
+  font-size: v.$heading-2;
+  font-weight: 400;
+}
+
+p {
+  font-size: v.$paragraph;
+  line-height: 1.5;
+}
+
+input,
+textarea {
+  border: none;
+  outline: 1px solid v.$color-secondary;
+  font-size: func.rem(16);
+  font-family: v.$font-montserrat;
+  font-weight: 500;
+}
+
+.container {
+  margin-inline: auto;
+  padding-inline: func.rem(20);
+  max-width: func.em(1012);
+
+  @media (width < func.em(768)) {
+    padding-inline: func.rem(16);
+  }
+}
+
+.wrapper {
+  margin-inline: auto;
+  padding-inline: func.rem(45);
+  max-width: func.em(1440);
+
+  @media (width < func.em(768)) {
+    padding-inline: func.rem(16);
+  }
+}

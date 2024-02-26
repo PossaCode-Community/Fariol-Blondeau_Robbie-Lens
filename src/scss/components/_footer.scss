@@ -1,0 +1,41 @@
+@use "../utils/fonction" as func;
+@use "../varibles" as v;
+
+footer {
+  padding-block: func.rem(35);
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: func.rem(42);
+
+    @media (width < func.em(425)) {
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    img {
+      width: func.rem(54);
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: func.rem(24);
+
+      @media (width < func.em(425)) {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+[data-lucide] {
+  color: v.$color-primary;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: v.$color-secondary;
+  }
+}

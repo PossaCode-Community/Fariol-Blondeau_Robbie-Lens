@@ -1,0 +1,28 @@
+@use "../utils/fonction" as func;
+
+.custom-btn {
+  $first-color: hsl(250, 24%, 62%);
+  $second-color: hsl(238, 64%, 80%);
+
+  display: inline-block;
+  background-image: linear-gradient(to bottom, $first-color, $second-color);
+  border-radius: func.rem(50);
+  padding-block: func.rem(21);
+  font-size: func.rem(17);
+
+  max-width: func.rem(314);
+  text-align: center;
+
+  transition: background-image 0.35s ease-in-out;
+
+  &:hover {
+    $first-color: hsl(249, 14%, 45%);
+    $second-color: hsl(239, 27%, 63%);
+
+    background-image: linear-gradient(to bottom, $first-color, $second-color);
+  }
+
+  @media (width < func.em(768)) {
+    max-width: func.rem(287);
+  }
+}
