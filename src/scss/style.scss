@@ -27,8 +27,6 @@
         height: func.rem(100);
         width: func.rem(100);
 
-        // TODO: To refactor
-
         border-right: func.rem(2) solid v.$color-secondary;
         border-bottom: func.rem(2) solid v.$color-secondary;
       }
@@ -179,8 +177,8 @@
       cursor: not-allowed;
       background-image: linear-gradient(
         to bottom,
-        rgba($first-color, 0.1),
-        rgba($second-color, 0.1)
+        rgba($first-color, 0.5),
+        rgba($second-color, 0.5)
       );
     }
   }
