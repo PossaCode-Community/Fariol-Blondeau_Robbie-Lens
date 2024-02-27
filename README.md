@@ -10,7 +10,8 @@ Cet projet utilise GoogleSheet comme database pour enregistrer les entrées des 
 - SCSS
 - Gsap
 - Lucide Icons
-- Google Sheet
+- Google Sheet Storage
+- Google App Scrot
 
 
 ### Deploy
