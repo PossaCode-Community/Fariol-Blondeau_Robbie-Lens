@@ -11,7 +11,7 @@ Cet projet utilise GoogleSheet comme database pour enregistrer les entrées des 
 - Gsap
 - Lucide Icons
 - Google Sheet Storage
-- Google App Scrot
+- Google App Script
 
 
 ### Deploy
