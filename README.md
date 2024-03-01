@@ -19,6 +19,9 @@ Ce projet utilise GoogleSheet comme data storage pour enregistrer les informatio
     pnpm dev
 ```
 
+### App Script Code
+You can get the GoogleSheet App Script code by clicking [HERE](https://www.notion.so/Robbie-Lens-Photography-83418d49b85a45d4a555b0b8282f80be?pvs=4) !
+
 ### Stack
 
 - Vite
