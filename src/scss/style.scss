@@ -1,6 +1,6 @@
+@use "utils/fonction" as func;
 @use "varibles" as v;
 @use "global";
-@use "utils/fonction" as func;
 @use "components";
 
 .section__hero {
@@ -231,6 +231,7 @@
   font-size: v.$heading-1;
   color: v.$color-secondary;
   margin-block: func.rem(100);
+  font-weight: 400;
 
   @media (width < func.rem(768)) {
     margin-block: func.rem(50);

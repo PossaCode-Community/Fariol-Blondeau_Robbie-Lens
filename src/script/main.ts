@@ -1,9 +1,10 @@
-import "../scss/style.scss";
-import "./animation";
+import "@/scss/style.scss";
+import "@/script/animation";
+
 import { createIcons, Instagram, Twitter } from "lucide";
-import { createGrid, wait } from "../lib/utils";
-import tarifs from "../data/tarifs.json";
-import type { FormDataProps } from "../types";
+
+import { createGrid, sendDataToTheServer, wait } from "@/lib/utils";
+import tarifs from "@/data/tarifs.json";
 
 createIcons({
   icons: { Instagram, Twitter },
@@ -21,11 +22,6 @@ const paysagesGrid = document.querySelector<HTMLDivElement>(
 const portraitsGrid = document.querySelector<HTMLDivElement>(
   "[data-grid=portraits]"
 )!;
-
-const form = document.querySelector<HTMLFormElement>("form");
-const submitButton = document.querySelector<HTMLButtonElement>("button")!;
-
-form?.addEventListener("submit", handleSubmit);
 
 createGrid({
   length: 6,
@@ -63,65 +59,39 @@ for (let tarif of tarifs) {
   tarifsGrid?.appendChild(card);
 }
 
+const form = document.querySelector<HTMLFormElement>("form");
+const submitButton = document.querySelector<HTMLButtonElement>("button")!;
+
+form?.addEventListener("submit", handleSubmit);
+
 async function handleSubmit(event: Event) {
   event.preventDefault();
-  const form = event.target as HTMLFormElement | null;
-  const googlesheet_url = `https://script.google.com/macros/s/${
+  const form = event.target as HTMLFormElement;
+  const GOOGLESHEET_URL = `https://script.google.com/macros/s/${
     import.meta.env.VITE_GOOGLESHEET_ID
-  }`;
+  }/exec`;
 
-  if (form) {
-    const formData = new FormData(form);
-    const name = formData.get("name");
-    const email = formData.get("email");
-    const message = formData.get("message");
+  const formData = new FormData(form);
 
-    submitButton?.setAttribute("disabled", "true");
-    submitButton.textContent = "Envoi en cours...";
+  const name = formData.get("name")!;
+  const email = formData.get("email")!;
+  const message = formData.get("message")!;
 
-    if (name && email && message) {
+  submitButton?.setAttribute("disabled", "true");
+  submitButton.textContent = "Envoi en cours...";
+
+  await wait(3000)
+    .then(async () => {
       await sendDataToTheServer({
-        url: googlesheet_url,
-        data: {
-          name,
-          email,
-          message,
-        },
+        url: GOOGLESHEET_URL,
+        data: { name, email, message },
       });
-    }
-
-    await wait(3000).then(() => {
+    })
+    .then(() => {
       submitButton?.removeAttribute("disabled");
       submitButton.textContent = "Envoyez";
+    })
+    .finally(() => {
+      form.reset();
     });
-
-    form.reset();
-  }
-}
-
-type Props = {
-  url: string;
-} & FormDataProps;
-
-async function sendDataToTheServer({ url, data }: Props) {
-  try {
-    const formData = new URLSearchParams();
-    formData.append("name", String(data.name));
-    formData.append("email", String(data.email));
-    formData.append("message", String(data.message));
-
-    const response = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: formData,
-    });
-
-    if (!response.ok) {
-      throw new Error("Failed to send data to the server");
-    }
-  } catch (error) {
-    console.error("Failed to send data to the server:", error);
-  }
 }

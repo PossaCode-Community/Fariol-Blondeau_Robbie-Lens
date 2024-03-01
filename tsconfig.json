@@ -13,6 +13,12 @@
     "isolatedModules": true,
     "noEmit": true,
 
+    /* custom alias @*/
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
