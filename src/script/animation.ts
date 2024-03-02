@@ -48,11 +48,16 @@ gsap.utils.toArray<HTMLDivElement[]>("div").forEach((div) => {
     div,
     {
       opacity: 0.5,
+      y: -10,
     },
     {
       opacity: 1,
+      y: 0,
       duration: 2.2,
-      scrollTrigger: div,
+      scrollTrigger: {
+        trigger: div,
+        start: "top center",
+      },
     }
   );
 });

@@ -9,17 +9,18 @@ Ce projet utilise GoogleSheet comme data storage pour enregistrer les informatio
 
 ```bash
 
-    # First clone the project
-    git clone https://github.com/PossaCode-Community/Fariol-Blondeau_Robbie-Lens.git
+# First clone the project
+git clone https://github.com/PossaCode-Community/Fariol-Blondeau_Robbie-Lens.git
 
-    #Install packages
-    pnpm install
+#Install packages
+pnpm install
 
-    # Run the project
-    pnpm dev
+# Run the project
+pnpm dev
 ```
 
 ### App Script Code
+
 You can get the GoogleSheet App Script code by clicking [HERE](https://www.notion.so/Robbie-Lens-Photography-83418d49b85a45d4a555b0b8282f80be?pvs=4) !
 
 ### Stack
